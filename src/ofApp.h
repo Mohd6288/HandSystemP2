@@ -5,7 +5,6 @@
 #include "Hand.h"
 #include "ofxGui.h"
 #include "Particle.h"
-#include "ofxMaxim.h"
 #include "SoundManager.h"
 
 // Corrected port numbers
