@@ -17,7 +17,9 @@ First, clone both required repositories to your local machine using the followin
 
 Command Line:
 You might need to clone this inside "\of_v0.12.0_vs_release\apps\myApps" then import via project generator app:
+
 git clone https://github.com/Mohd6288/HandSystemP2
+
 git clone https://github.com/monlim/MediaPipe-Hands-OSC
 
 ### 2. Install Node.js Packages
