@@ -31,6 +31,7 @@ void Particle::updateBehavior() {
         velocity.x = cos(angle) * speed;
         velocity.y = sin(angle) * speed;
         position += velocity;
+        color = color.lerp(ofColor(55, 20, 120), 0.03);
         blendMode = ADD;
         // Optional: Implement central attraction or dynamic swirling center
         break;
@@ -42,7 +43,7 @@ void Particle::updateBehavior() {
         float distance = glm::length(direction);
         float strength = std::min(10.0f, 100.0f / (distance + 1.0f)); // Repulsion strength diminishes with distance
         direction = glm::normalize(direction);
-
+        color = color.lerp(ofColor(55, 20, 120), 0.03);
         velocity += direction * strength * 0.1f; // Adjust this factor to increase/decrease the influence
         position += velocity;
         blendMode = SUBTRACT;
@@ -54,7 +55,7 @@ void Particle::updateBehavior() {
         float distance = glm::length(direction);
         float strength = std::min(10.0f, 100.0f / (distance + 1.0f)); // Attraction strength diminishes with distance
         direction = glm::normalize(direction);
-
+        color = color.lerp(ofColor(55, 20, 120), 0.03);
         velocity += direction * strength * 0.1f; // Adjust this factor to increase/decrease the influence
         position += velocity;
         blendMode = SCREEN;
@@ -75,15 +76,16 @@ void Particle::draw() const {
         ofEnableBlendMode(OF_BLENDMODE_ALPHA);
         break;
     case ADD:
-        ofEnableBlendMode(OF_BLENDMODE_ALPHA);
+        ofEnableBlendMode(OF_BLENDMODE_ADD);
         break;
     case SUBTRACT:
-        ofEnableBlendMode(OF_BLENDMODE_ALPHA);
+        ofEnableBlendMode(OF_BLENDMODE_ADD);
         break;
     case SCREEN:
-        ofEnableBlendMode(OF_BLENDMODE_ALPHA);
+        ofEnableBlendMode(OF_BLENDMODE_SCREEN);
         break;
     }
+
     ofSetColor(color);
     ofFill();
     ofDrawCircle(position,size);

@@ -173,7 +173,7 @@ void Hand::processHandMessage(const ofxOscMessage& message)
 
 void Hand::draw()
 {
-    ofSetColor(ofColor::white);  // Set text color to white
+    //ofSetColor(ofColor::black);  // Set text color to white
     drawBox();
     
     // Draw current behavior description
@@ -207,7 +207,7 @@ std::pair<glm::vec2, glm::vec2> Hand::getBoundingBox(const std::vector<glm::vec2
 void Hand::displayFingerNames() {
     // Placeholder for displaying finger names or IDs
     // This is where you could loop over landmarks and draw text for each
-    ofSetColor(ofColor::white);
+    ofSetColor(ofColor::black);
     // Example for the left hand
     std::vector<std::string> fingerNames = { "PalmBase","Thumb", "Index", "Middle", "Ring", "Pinky" };
     for (int i = 0; i < leftHandLandmarks.size() && i < fingerNames.size() * 4; i += 4) {
@@ -220,6 +220,7 @@ void Hand::displayFingerNames() {
 
 void Hand::drawBox() {
     // Get bounding boxes for both hands
+    ofSetColor(0);
     auto leftHandBox = getBoundingBox(leftHandLandmarks);
     auto rightHandBox = getBoundingBox(rightHandLandmarks);
 
@@ -240,12 +241,12 @@ void Hand::drawBox() {
 
 void Hand::drawLanmarks() {
     // Assuming the landmarks are normalized, we map them to the window dimensions.
-    ofSetColor(ofColor::blue);
+    ofSetColor(0);
     for (const auto& landmark : leftHandLandmarks) {
         ofDrawCircle(landmark.x * ofGetWidth(), landmark.y * ofGetHeight(), 10);
     }
 
-    ofSetColor(ofColor::red);
+    //ofSetColor(ofColor::red);
     for (const auto& landmark : rightHandLandmarks) {
         ofDrawCircle(landmark.x * ofGetWidth(), landmark.y * ofGetHeight(), 10);
     }

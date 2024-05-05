@@ -5,8 +5,9 @@
 #include "Hand.h"
 #include "ofxGui.h"
 #include "Particle.h"
-#include "ofxMaxim.h"
 #include "SoundManager.h"
+#include "IntroManager.h"
+
 
 // Corrected port numbers
 #define RECEIVE_PORT 9129
@@ -27,6 +28,8 @@ public:
 
     Particle::Behavior currentBehavior; // Current behavior
     vector<Particle> particles;
+    IntroManager introManager;
+    bool show = true;
 
   
     //SoundManager soundManager;

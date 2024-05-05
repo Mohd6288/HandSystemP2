@@ -7,7 +7,6 @@ public:
         Normal,
         REPEL,
         SWIRL,
-        RIVER,
         START_SOUND,
         PARTICLES_SOUND,
         NUM_SOUNDS // Always last, gives the total number of sounds
@@ -23,7 +22,6 @@ private:
         "eleEffecct.wav",
         "repelEffect.wav",
         "Swirl.wav",
-        "river.wav",
         "startSound.wav",
         "particlesSound.wav"
     };

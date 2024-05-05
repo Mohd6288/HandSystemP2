@@ -2,6 +2,8 @@
 
 //--------------------------------------------------------------
 void ofApp::setup() {
+
+    introManager.setup();
     //std::string c = "node .\\MediaPipe-Hands-OSC-main\\MediaPipe-Hands-OSC-main\\bridge.js";
     //ofSystem(c.c_str());
     //https://monlim.github.io/MediaPipe-Hands-OSC/
@@ -12,7 +14,7 @@ void ofApp::setup() {
 
     //----------------------------Hand And particle SYSTEM----------------------------------//
     ofSetFrameRate(45);
-    ofSetBackgroundColor(0, 0, 0);
+    ofSetBackgroundColor(0);
     hand.setup();
     //soundManager.setup();
     
@@ -20,39 +22,51 @@ void ofApp::setup() {
 
 //--------------------------------------------------------------
 void ofApp::update() {
-   
+    if (!show) {
+
+    }
     hand.update();
+
 }
 
 //--------------------------------------------------------------
 void ofApp::draw() {
-    //screen frame rate
-    hand.draw();
+   
+    if (introManager.isIntroActive()) {
+        introManager.draw();
+    }
+    else {
+        // Make sure this does not interfere or overlap improperly
+        hand.draw();
+    }
+  
 }
 
 void ofApp::keyPressed(int key) {
-    /*
+    
     switch (key) {
-    case '1':
-        soundManager.playSound(SoundManager::RAINY);
+    case 's':
+        show = !show;
+        introManager.toggleInstructions();
+        //soundManager.playSound(SoundManager::RAINY);
         break;
     case '2':
-        soundManager.playSound(SoundManager::BEAT);
+        //soundManager.playSound(SoundManager::BEAT);
         break;
     case '3':
-        soundManager.playSound(SoundManager::GUITAR);
+        //soundManager.playSound(SoundManager::GUITAR);
         break;
     case '4':
-        soundManager.playSound(SoundManager::RIVER);
+        //soundManager.playSound(SoundManager::RIVER);
         break;
     case '5':
-        soundManager.playSound(SoundManager::START_SOUND);
+       // soundManager.playSound(SoundManager::START_SOUND);
         break;
     default:
-        soundManager.playSound(SoundManager::PARTICLES_SOUND);
+       //&soundManager->playSound(SoundManager::PARTICLES_SOUND);
         break;
     }
-    */
+    
 }
 
 
