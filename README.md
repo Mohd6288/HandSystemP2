@@ -41,7 +41,7 @@ node bridge.js
 
 Open the following URL in your web browser to begin hand tracking:
 
-https://monlim.github.io/MediaPipe-Hands-OSC/
+https://monlim.github.io/Handmate-OSC/
 
 ### 5. Build and Run HandSystemP2
 
