@@ -9,7 +9,8 @@ void ofApp::setup() {
     //https://monlim.github.io/MediaPipe-Hands-OSC/
 
     //--------------Start tracking but you need to run the bride.js from coomand line------------------//
-    std::string explorer = "explorer \"https://monlim.github.io/MediaPipe-Hands-OSC/\"";
+    //https://monlim.github.io/Handmate-OSC/
+    std::string explorer = "explorer \"https://monlim.github.io/Handmate-OSC/\"";
     ofSystem(explorer.c_str());
 
     //----------------------------Hand And particle SYSTEM----------------------------------//
