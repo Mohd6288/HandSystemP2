@@ -20,7 +20,7 @@ You might need to clone this inside "\of_v0.12.0_vs_release\apps\myApps" then im
 
 git clone https://github.com/Mohd6288/HandSystemP2
 
-git clone https://github.com/monlim/MediaPipe-Hands-OSC
+git clone https://github.com/monlim/Handmate-OSC
 
 ### 2. Install Node.js Packages
 
@@ -28,6 +28,7 @@ Navigate to the MediaPipe-Hands-OSC directory and install the necessary packages
 
 Command Line:
 cd MediaPipe-Hands-OSC
+
 npm install
 
 ### 3. Run the OSC Bridge
